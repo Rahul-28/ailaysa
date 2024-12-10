@@ -1,0 +1,14 @@
+<div class="box-container">
+  @if(retrievedBox) {
+  <div class="box">
+    <div class="box-header">
+      <span>{{ retrievedBox.id }}</span>
+    </div>
+    <a class="retrievedBox-title">{{ retrievedBox.title }}</a>
+  </div>
+  } @else {
+  <div>
+    <p>The Box cannot be found</p>
+  </div>
+  }
+</div>

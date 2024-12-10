@@ -1,0 +1,28 @@
+<div class="controls">
+  <p>Count: {{ boxes.length }}</p>
+  <input
+    type="text"
+    name="box-title"
+    #boxTitle
+    placeholder="Enter your title"
+    class="input-box"
+  />
+  <button
+    (click)="addBox(boxTitle.value); boxTitle.value = ''"
+    class="add-button"
+  >
+    Add Box
+  </button>
+</div>
+
+<div class="box-container">
+  @for(box of boxes; track $index) {
+  <div class="box">
+    <div class="box-header">
+      <span>{{ box.id }}</span>
+      <button (click)="deleteBox(box.id)">x</button>
+    </div>
+    <a class="box-title" (click)="navigate(box.id)">{{ box.title }}</a>
+  </div>
+  }
+</div>
